@@ -12,8 +12,12 @@ import (
 const MaxRoutines = 10
 
 func Square(in chan int) {
-	num := <-in
-	fmt.Print(num*num, " ")
+	//итерируемся по каналу
+	for num := range in {
+		//считаем квадрат и выводим
+		fmt.Print(num*num, " ")
+	}
+
 }
 
 func concurrentSquares(arr []int) {
@@ -23,19 +27,28 @@ func concurrentSquares(arr []int) {
 
 	//создаем канал
 	ch := make(chan int)
+
+	//задаем максимальное число горутин
 	goroutinesNum := len(arr)
 	if len(arr) > MaxRoutines {
 		goroutinesNum = MaxRoutines
 	}
+
+	//запускаем горутины
 	for i := 0; i < goroutinesNum; i++ {
 		go Square(ch)
 	}
 
+	//передаем входные данные в канал, из которого
+	//читают горутины
 	for _, j := range arr {
 		ch <- j
 	}
 }
+
 func N2() {
+	//входной массив
 	arr := [...]int{2, 4, 6, 8, 10}
+	//запускаем нашу функцию
 	concurrentSquares(arr[:])
 }
