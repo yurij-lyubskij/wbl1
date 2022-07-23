@@ -8,29 +8,28 @@ package solution
 //Выбрать и обосновать способ завершения работы всех воркеров
 
 import (
+	"context"
 	"fmt"
 	"github.com/spf13/viper"
 	"log"
 	"math/rand"
-	"os"
-	"os/signal"
 	"runtime"
 	"sync"
-	"syscall"
 	"time"
 )
 
 //воркер-читатель
-func Reader(ch1 <-chan interface{}, wg *sync.WaitGroup) {
+func ReaderTimed(ctx context.Context, ch1 <-chan interface{}, wg *sync.WaitGroup) {
 	//после выполнения уменьшаем счетчик
 	defer wg.Done()
 	//итерируемся по каналу
 	for anything := range ch1 {
+		fmt.Print("ex5")
 		fmt.Println(anything)
 	}
 }
 
-func readWrite() {
+func readingWithTimer() {
 	//для того, чтобы горутины конкурировали,
 	//запустим все горутины на 1 ядре
 	runtime.GOMAXPROCS(1)
@@ -40,23 +39,21 @@ func readWrite() {
 	//создаем канал для входных данных
 	ch1 := make(chan interface{})
 
-	//создаем канал для сигналов ОС
-	sig := make(chan os.Signal, 1)
-	//слушаем сигналы SIGINT,SIGTERM
-	signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
-
 	//считываем число горутин из конфига
 	err := ReadConfig()
 	if err != nil {
 		log.Fatalf(err.Error())
 	}
 	goroutinesNum := viper.GetInt("goroutines")
+	seconds := viper.GetInt("seconds")
+	waitTime := time.Duration(seconds) * time.Second
+	ctx, _ := context.WithTimeout(context.Background(), waitTime)
 
 	//запускаем горутины
 	for i := 0; i < goroutinesNum; i++ {
 		//увеличиваем счетчик
 		wg.Add(1)
-		go Reader(ch1, wg)
+		go ReaderTimed(ctx, ch1, wg)
 	}
 
 	//передаем случайные входные данные в канал, из которого
@@ -65,8 +62,8 @@ func readWrite() {
 	for _ = range ticker.C {
 		select {
 		//получаем сигнал
-		case _ = <-sig:
-			fmt.Println("graceful shutdown")
+		case <-ctx.Done():
+			fmt.Println("graceful shutdown after timeout")
 			//закрываем канал 1
 			close(ch1)
 			//ждем завершения воркеров
@@ -80,7 +77,7 @@ func readWrite() {
 	}
 }
 
-func N4() {
+func N5() {
 	//Отступ
 	fmt.Println()
 	//запускаем нашу функцию

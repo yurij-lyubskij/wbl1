@@ -7,6 +7,7 @@ import (
 func main() {
 	s.N1()
 	s.N2()
-	s.N3()
-	s.N4()
+	//s.N3()
+	//s.N4()
+	s.N5()
 }

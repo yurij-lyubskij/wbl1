@@ -9,8 +9,6 @@ import (
 //значение квадратов чисел взятых из массива (2,4,6,8,10)
 //и выведет их квадраты в stdout.
 
-const MaxRoutines = 10
-
 func Square(in chan int) {
 	//итерируемся по каналу
 	for num := range in {
