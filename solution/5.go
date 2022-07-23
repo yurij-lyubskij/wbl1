@@ -24,7 +24,6 @@ func ReaderTimed(ctx context.Context, ch1 <-chan interface{}, wg *sync.WaitGroup
 	defer wg.Done()
 	//итерируемся по каналу
 	for anything := range ch1 {
-		fmt.Print("ex5")
 		fmt.Println(anything)
 	}
 }
@@ -78,8 +77,6 @@ func readingWithTimer() {
 }
 
 func N5() {
-	//Отступ
-	fmt.Println()
 	//запускаем нашу функцию
-	readWrite()
+	readingWithTimer()
 }
