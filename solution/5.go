@@ -19,7 +19,7 @@ import (
 )
 
 //воркер-читатель
-func ReaderTimed(ctx context.Context, ch1 <-chan interface{}, wg *sync.WaitGroup) {
+func ReaderTimed(ch1 <-chan interface{}, wg *sync.WaitGroup) {
 	//после выполнения уменьшаем счетчик
 	defer wg.Done()
 	//итерируемся по каналу
@@ -44,15 +44,20 @@ func readingWithTimer() {
 		log.Fatalf(err.Error())
 	}
 	goroutinesNum := viper.GetInt("goroutines")
+
+	//считываем число cекунд до остановки из конфига
 	seconds := viper.GetInt("seconds")
+	//получаем время задержки
 	waitTime := time.Duration(seconds) * time.Second
+	//получаем контекст с таймаутом
 	ctx, _ := context.WithTimeout(context.Background(), waitTime)
 
 	//запускаем горутины
 	for i := 0; i < goroutinesNum; i++ {
 		//увеличиваем счетчик
 		wg.Add(1)
-		go ReaderTimed(ctx, ch1, wg)
+		//не передаем контекст, т.к. просто закроем канал по таймауту
+		go ReaderTimed(ch1, wg)
 	}
 
 	//передаем случайные входные данные в канал, из которого
@@ -60,7 +65,13 @@ func readingWithTimer() {
 	ticker := time.NewTicker(time.Second)
 	for _ = range ticker.C {
 		select {
-		//получаем сигнал
+		//получаем таймаут
+		//	можно было сделать по таймеру
+		//timer := time.NewTimer(2*time.Second)
+		//t := <-timer.C
+		//или передавать контекст, и сделать
+		//select в горутине
+		//но канал должен закрывать producer
 		case <-ctx.Done():
 			fmt.Println("graceful shutdown after timeout")
 			//закрываем канал 1
@@ -70,6 +81,7 @@ func readingWithTimer() {
 			//выходим
 			return
 		default:
+			//просто пишем в канал
 			j := rand.Intn(100)
 			ch1 <- j
 		}
