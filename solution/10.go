@@ -28,13 +28,14 @@ func GroupByStep(temp []float64, step int) map[int][]float64 {
 }
 
 func (*Index) N10() {
-	//Отступ
-	fmt.Println()
 	//входной массив
+	fmt.Println("входной массив:")
 	temp := [...]float64{-25.4, -27.0, 13.0, -8, 19.0, 15.5, 24.5,
 		0, -21.0, 32.5, 8, 1, 11, -11}
-	//запускаем нашу функцию
+	fmt.Println(temp)
 	step := 10
+	fmt.Println("Распределяем по группам и выводим")
+	//Распределяем по группам с помощью карты
 	myMap := GroupByStep(temp[:], step)
 	//выводим карту
 	fmt.Println(myMap)

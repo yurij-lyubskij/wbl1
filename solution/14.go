@@ -30,13 +30,15 @@ func RTTI(p interface{}) {
 }
 
 func (*Index) N14() {
-	//Отступ
-	fmt.Println()
 	//входные данные
+	fmt.Println("входные данные:")
 	A := 1
 	B := "str"
 	C := true
 	D := make(chan interface{})
+	fmt.Printf("A = %v, B = %v, C = %v, D = %v\n", A, B, C, D)
+	fmt.Println("Определяем тип 2 разными способами")
+	fmt.Println("1 способ -  свич по типу")
 	//проверяем и выводим результат
 	RTTI(A)
 	RTTI(B)
@@ -45,6 +47,7 @@ func (*Index) N14() {
 	//также можно чере reflect.TypeOf()
 	//тогда получаем значение reflect.Type,
 	//c которым можно работать
+	fmt.Println("2 способ - reflect.TypeOf")
 	fmt.Println(reflect.TypeOf(A))
 	fmt.Println(reflect.TypeOf(B))
 	fmt.Println(reflect.TypeOf(C))

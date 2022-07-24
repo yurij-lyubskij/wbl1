@@ -32,14 +32,13 @@ func fillAB() (A, B map[int]struct{}) {
 }
 
 func (*Index) N11() {
-	//Отступ
-	fmt.Println()
 	//заполняем множества
 	A, B := fillAB()
-	fmt.Println(A)
-	fmt.Println(B)
+	fmt.Println("Множество A: \n", A)
+	fmt.Println("Множество B: \n", B)
 	//ищем пересечение
 	C := Intersection(A, B)
+	fmt.Println("Пересечение А и В")
 	//выводим карту
 	fmt.Println(C)
 }

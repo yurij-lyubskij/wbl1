@@ -51,12 +51,15 @@ func copyString(input string, num int) (string, int) {
 var justString string
 
 func someFunc() {
-	//создаем и выводи случайную строку
+	//создаем и выводим случайную строку
+	fmt.Println("создаем и выводим случайную строку")
 	v := createHugeString(1 << 10)
 	fmt.Println(v)
+	fmt.Println()
 	//временные переменные освободятся после выхода из функции
 	//при использовании рун символы не обрезаются
 	justString, _ = copyString(v, 100)
+	fmt.Println("выводим копию ее части")
 	fmt.Println(justString)
 }
 

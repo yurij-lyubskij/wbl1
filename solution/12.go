@@ -17,13 +17,12 @@ func makeSet(Aslice []string) (A map[string]struct{}) {
 }
 
 func (*Index) N12() {
-	//Отступ
-	fmt.Println()
 	//входные данные
 	Aslice := []string{"cat", "cat", "dog", "cat", "tree"}
-	fmt.Println(Aslice)
-	//ищем пересечение
+	fmt.Println("Исходный слайс строк", Aslice)
+	//строим множество
 	A := makeSet(Aslice)
 	//выводим карту
-	fmt.Println(A)
+	//можно было вывести только ключи
+	fmt.Println("Получившееся множество", A)
 }

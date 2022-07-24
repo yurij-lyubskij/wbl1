@@ -12,7 +12,7 @@ import (
 //после чего данные из второго канала
 //должны выводиться в stdout.
 
-func SquareOutput(ch2 <-chan int, wg *sync.WaitGroup) {
+func Output(ch2 <-chan int, wg *sync.WaitGroup) {
 	//после выполнения уменьшаем счетчик
 	defer wg.Done()
 	//итерируемся по каналу
@@ -23,7 +23,7 @@ func SquareOutput(ch2 <-chan int, wg *sync.WaitGroup) {
 
 }
 
-func SquareCalc(ch1 <-chan int, ch2 chan<- int, wg *sync.WaitGroup) {
+func Calc(ch1 <-chan int, ch2 chan<- int, wg *sync.WaitGroup) {
 	//после выполнения уменьшаем счетчик
 	defer wg.Done()
 	//итерируемся по каналу
@@ -34,7 +34,7 @@ func SquareCalc(ch1 <-chan int, ch2 chan<- int, wg *sync.WaitGroup) {
 	}
 }
 
-func SquareWrite(arr []int) {
+func Write(arr []int) {
 	//для того, чтобы горутины конкурировали,
 	//запустим все горутины на 1 ядре
 	runtime.GOMAXPROCS(1)
@@ -57,7 +57,7 @@ func SquareWrite(arr []int) {
 	for i := 0; i < goroutinesNum; i++ {
 		//увеличиваем счетчик
 		wg.Add(1)
-		go SquareCalc(ch1, ch2, wg)
+		go Calc(ch1, ch2, wg)
 	}
 
 	//запускаем горутины
@@ -65,7 +65,7 @@ func SquareWrite(arr []int) {
 		//увеличиваем 2 счетчик
 		wg2.Add(1)
 		//вывод квадратов в горутине
-		go SquareOutput(ch2, wg2)
+		go Output(ch2, wg2)
 	}
 
 	//передаем входные данные в канал, из которого
@@ -84,10 +84,11 @@ func SquareWrite(arr []int) {
 }
 
 func (*Index) N9() {
-	//Отступ
-	fmt.Println()
 	//входной массив
+	fmt.Println("входной массив:")
 	arr := [...]int{2, 4, 6, 8, 10, 12, 15, 18}
+	fmt.Println(arr)
+	fmt.Println("Считаем и выводим x*2")
 	//запускаем нашу функцию
-	SquareWrite(arr[:])
+	Write(arr[:])
 }
