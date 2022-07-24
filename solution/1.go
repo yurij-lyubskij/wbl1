@@ -25,8 +25,11 @@ type Action struct {
 
 func (*Index) N1() {
 	//создаем структуру, содержащую втроенную структуру Human
+	fmt.Println("создаем структуру, содержащую втроенную структуру Human")
 	s := Action{Human{name: "Ivan", age: 18}, "student"}
+	fmt.Println(s)
 	//Вызываем метод встроенной структуры 2 способами
+	fmt.Println("Вызываем метод встроенной структуры 2 способами")
 	s.SayHi()
 	s.Human.SayHi()
 }
