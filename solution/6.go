@@ -280,6 +280,8 @@ func signalCancel() {
 
 func (*Index) N6() {
 	//запускаем наши функции
+	fmt.Println("Начинаем писать случайные числа")
+	fmt.Println("завершение автоматически 5 разными способами")
 	chanClose()
 	selectClose()
 	ctxCancel()

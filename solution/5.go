@@ -86,6 +86,8 @@ func readingWithTimer() {
 }
 
 func (*Index) N5() {
+	fmt.Println("Начинаем писать случайные числа")
+	fmt.Println("завершение по таймеру")
 	//запускаем нашу функцию
 	readingWithTimer()
 }

@@ -46,7 +46,10 @@ func concurrentSquares(arr []int) {
 
 func (*Index) N2() {
 	//входной массив
+	fmt.Println("входной массив:")
 	arr := [...]int{2, 4, 6, 8, 10}
+	fmt.Println(arr)
 	//запускаем нашу функцию
+	fmt.Println("Запускаем функцию расчета квадратов")
 	concurrentSquares(arr[:])
 }

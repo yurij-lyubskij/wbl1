@@ -81,8 +81,8 @@ func readWrite() {
 }
 
 func (*Index) N4() {
-	//Отступ
-	fmt.Println()
+	fmt.Println("Начинаем писать случайные числа")
+	fmt.Println("Graceful shutdown по сигналу")
 	//запускаем нашу функцию
 	readWrite()
 }

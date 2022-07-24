@@ -23,13 +23,13 @@ func SetBit(number int64, i int, isOne bool) int64 {
 }
 
 func (*Index) N8() {
-	//запускаем нашу функцию
 	var number int64 = 0
-	//отступ
-	fmt.Println()
+	fmt.Println("Исходное число - 0")
+	fmt.Println("Сначала установим 3 бит в 1")
 	//3 бит 0 в 1 - 8
 	newNumber := SetBit(number, 3, true)
-	fmt.Println(newNumber)
+	fmt.Println("Получили число ", newNumber)
 	//3 бит 8 в 0 - 0
-	fmt.Println(SetBit(newNumber, 3, false))
+	fmt.Println("Установим 3 бит обратно в 0")
+	fmt.Println("Получили число ", SetBit(newNumber, 3, false))
 }

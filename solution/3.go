@@ -82,10 +82,11 @@ func sumSquares(arr []int) {
 }
 
 func (*Index) N3() {
-	//Отступ
-	fmt.Println()
 	//входной массив
+	fmt.Println("входной массив:")
 	arr := [...]int{2, 4, 6, 8, 10}
+	fmt.Println(arr)
 	//запускаем нашу функцию
+	fmt.Println("Запускаем функцию расчета суммы квадратов")
 	sumSquares(arr[:])
 }
