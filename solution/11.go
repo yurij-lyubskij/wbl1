@@ -3,6 +3,8 @@ package solution
 import "fmt"
 
 //Реализовать пересечение двух неупорядоченных множеств.
+
+//Ищем пересечение - если есть в одном и в другом
 func Intersection(A, B map[int]struct{}) map[int]struct{} {
 	C := make(map[int]struct{})
 	for key := range A {
@@ -14,6 +16,7 @@ func Intersection(A, B map[int]struct{}) map[int]struct{} {
 	return C
 }
 
+//генерируем входные данные
 func fillAB() (A, B map[int]struct{}) {
 	A = make(map[int]struct{}, 0)
 	B = make(map[int]struct{}, 0)
