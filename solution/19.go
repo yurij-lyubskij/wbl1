@@ -12,7 +12,7 @@ func reverseString(in string) string {
 	input := []rune(in)
 	//Выделяем память
 	output := make([]rune, len(input))
-	//В цикле пишем строку в новый массив
+	//В цикле пишем строку в новый слайс
 	//в обратном порядке
 	for i := 0; i < len(input); i++ {
 		j := len(input) - i - 1
