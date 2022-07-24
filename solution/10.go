@@ -27,7 +27,7 @@ func GroupByStep(temp []float64, step int) map[int][]float64 {
 	return myMap
 }
 
-func N10() {
+func (*Index) N10() {
 	//Отступ
 	fmt.Println()
 	//входной массив

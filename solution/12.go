@@ -16,7 +16,7 @@ func makeSet(Aslice []string) (A map[string]struct{}) {
 	return
 }
 
-func N12() {
+func (*Index) N12() {
 	//Отступ
 	fmt.Println()
 	//входные данные

@@ -14,7 +14,7 @@ func sleep(seconds int) {
 	_ = <-timer.C
 }
 
-func N25() {
+func (*Index) N25() {
 	//Отступ
 	fmt.Println()
 	//выводим что-то

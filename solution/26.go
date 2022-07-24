@@ -31,7 +31,7 @@ func CheckUnique(input string) bool {
 	return true
 }
 
-func N26() {
+func (*Index) N26() {
 	//Отступ
 	fmt.Println()
 	//входные данные - строки

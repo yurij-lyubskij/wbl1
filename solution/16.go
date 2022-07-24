@@ -57,7 +57,7 @@ func quickSort(arr []int, l, r int) {
 	}
 }
 
-func N16() {
+func (*Index) N16() {
 	//Отступ
 	fmt.Println()
 	//входные данные

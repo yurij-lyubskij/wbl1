@@ -22,7 +22,7 @@ func SetBit(number int64, i int, isOne bool) int64 {
 	return number
 }
 
-func N8() {
+func (*Index) N8() {
 	//запускаем нашу функцию
 	var number int64 = 0
 	//отступ

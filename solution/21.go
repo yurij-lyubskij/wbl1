@@ -46,7 +46,7 @@ func (c *client) insertTypeC(usb android) {
 	usb.insertTypeC()
 }
 
-func N21() {
+func (*Index) N21() {
 	client := &client{}
 	smartPhone := &Smartphone{}
 	//клиент может заряжать смартфон без адаптера

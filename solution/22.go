@@ -29,7 +29,7 @@ func Subtract(a *big.Float, b *big.Float) *big.Float {
 	return new(big.Float).Sub(a, b)
 }
 
-func N22() {
+func (*Index) N22() {
 	//задаем большие числа строкой
 	aString := "123456789101112131415161700000000.0003"
 	bString := "567891011121314151617000000000000.0007"

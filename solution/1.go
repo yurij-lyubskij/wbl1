@@ -23,7 +23,7 @@ type Action struct {
 	profession string
 }
 
-func N1() {
+func (*Index) N1() {
 	//создаем структуру, содержащую втроенную структуру Human
 	s := Action{Human{name: "Ivan", age: 18}, "student"}
 	//Вызываем метод встроенной структуры 2 способами

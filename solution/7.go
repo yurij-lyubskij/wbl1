@@ -51,7 +51,7 @@ func StoreLoad(myMap *ConcurMap, ch1 <-chan int, wg *sync.WaitGroup) {
 			if ok != true {
 				fmt.Println("no such key found")
 			}
-			if (ok == true) {
+			if ok == true {
 				fmt.Printf("key = %d, val = %d\n", i/2, val)
 			}
 		}
@@ -89,7 +89,7 @@ func MapCheck() {
 	wg.Wait()
 }
 
-func N7() {
+func (*Index) N7() {
 	//запускаем нашу функцию
 	MapCheck()
 }

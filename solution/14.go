@@ -29,7 +29,7 @@ func RTTI(p interface{}) {
 	}
 }
 
-func N14() {
+func (*Index) N14() {
 	//Отступ
 	fmt.Println()
 	//входные данные

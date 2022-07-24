@@ -40,7 +40,7 @@ func (p *Point) Distance(point Point) float64 {
 	return math.Sqrt(square1 + square2)
 }
 
-func N24() {
+func (*Index) N24() {
 	//Отступ
 	fmt.Println()
 	//входные данные - координаты x1, y1, x2, y2

@@ -83,7 +83,7 @@ func SquareWrite(arr []int) {
 	//ждем завершения горутин вывода
 }
 
-func N9() {
+func (*Index) N9() {
 	//Отступ
 	fmt.Println()
 	//входной массив

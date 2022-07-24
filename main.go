@@ -1,31 +1,22 @@
 package main
 
-import s "l1/solution"
+import (
+	s "l1/solution"
+	"log"
+	"os"
+	"reflect"
+	"strconv"
+)
 
 func main() {
-	//s.N1()
-	//s.N2()
-	//s.N3()
-	//s.N4()
-	//s.N5()
-	//s.N6()
-	//s.N7()
-	//s.N8()
-	//s.N9()
-	//s.N10()
-	//s.N11()
-	//s.N12()
-	//s.N13()
-	//s.N14()
-	//s.N15()
-	//s.N16()
-	//s.N18()
-	//s.N19()
-	//s.N20()
-	//s.N21()
-	//s.N22()
-	//s.N23()
-	//s.N24()
-	//s.N25()
-	s.N26()
+	if len(os.Args) == 1 {
+		log.Fatalf("Введите номер задачи")
+	}
+	num, err := strconv.Atoi(os.Args[1])
+	if err != nil || num < 1 || num > 26 {
+		log.Fatalf("Нет такой задачи")
+	}
+	index := s.Index{}
+	name := "N" + os.Args[1]
+	reflect.ValueOf(&index).MethodByName(name).Call([]reflect.Value{})
 }

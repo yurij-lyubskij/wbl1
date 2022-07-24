@@ -85,7 +85,7 @@ func readingWithTimer() {
 	}
 }
 
-func N5() {
+func (*Index) N5() {
 	//запускаем нашу функцию
 	readingWithTimer()
 }

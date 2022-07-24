@@ -63,7 +63,7 @@ func AtomicCount() {
 	fmt.Println("counter is = ", atomicVal.ShowCounter())
 }
 
-func N18() {
+func (*Index) N18() {
 	//Отступ
 	fmt.Println()
 	//запускаем нашу функцию

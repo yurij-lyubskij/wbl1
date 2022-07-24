@@ -22,7 +22,7 @@ func reverseString(in string) string {
 	return string(output)
 }
 
-func N19() {
+func (*Index) N19() {
 	//Отступ
 	fmt.Println()
 	//входные данные -строка

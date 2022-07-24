@@ -81,7 +81,7 @@ func sumSquares(arr []int) {
 	//ждем завершения горутины-сумматора
 }
 
-func N3() {
+func (*Index) N3() {
 	//Отступ
 	fmt.Println()
 	//входной массив

@@ -44,7 +44,7 @@ func concurrentSquares(arr []int) {
 	}
 }
 
-func N2() {
+func (*Index) N2() {
 	//входной массив
 	arr := [...]int{2, 4, 6, 8, 10}
 	//запускаем нашу функцию

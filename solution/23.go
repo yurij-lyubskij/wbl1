@@ -18,7 +18,7 @@ func DeleteFromSlice(slice []int, i int) ([]int, error) {
 	return slice, nil
 }
 
-func N23() {
+func (*Index) N23() {
 	//Отступ
 	fmt.Println()
 	//входные данные - слайс

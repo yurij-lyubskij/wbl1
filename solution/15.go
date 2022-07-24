@@ -60,6 +60,6 @@ func someFunc() {
 	fmt.Println(justString)
 }
 
-func N15() {
+func (*Index) N15() {
 	someFunc()
 }

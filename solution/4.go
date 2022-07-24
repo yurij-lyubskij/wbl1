@@ -80,7 +80,7 @@ func readWrite() {
 	}
 }
 
-func N4() {
+func (*Index) N4() {
 	//Отступ
 	fmt.Println()
 	//запускаем нашу функцию

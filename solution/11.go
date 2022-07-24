@@ -31,7 +31,7 @@ func fillAB() (A, B map[int]struct{}) {
 	return
 }
 
-func N11() {
+func (*Index) N11() {
 	//Отступ
 	fmt.Println()
 	//заполняем множества

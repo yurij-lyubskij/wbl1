@@ -24,7 +24,7 @@ func reverseWords(in string, sep string) string {
 	return strings.Join(output, sep)
 }
 
-func N20() {
+func (*Index) N20() {
 	//Отступ
 	fmt.Println()
 	//входные данные -строка

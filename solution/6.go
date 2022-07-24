@@ -278,7 +278,7 @@ func signalCancel() {
 	}
 }
 
-func N6() {
+func (*Index) N6() {
 	//запускаем наши функции
 	chanClose()
 	selectClose()

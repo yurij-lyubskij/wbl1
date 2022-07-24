@@ -1,6 +1,8 @@
 package solution
 
-import "github.com/spf13/viper"
+import (
+	"github.com/spf13/viper"
+)
 
 //подготовка чтения из конфига
 func ReadConfig() error {
@@ -15,3 +17,6 @@ func ReadConfig() error {
 }
 
 const MaxRoutines = 10
+
+type Index struct {
+}

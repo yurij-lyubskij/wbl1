@@ -40,7 +40,7 @@ func BinarySearch(arr []int, key int) int {
 	return -1
 }
 
-func N17() {
+func (*Index) N17() {
 	//Отступ
 	fmt.Println()
 	//входные данные -отсортированный массив
