@@ -23,12 +23,13 @@ func reverseString(in string) string {
 }
 
 func (*Index) N19() {
-	//Отступ
-	fmt.Println()
 	//входные данные -строка
+	fmt.Println("Разворачиваем строки")
 	str := "главрыба - абырвалг"
+	fmt.Println("Исходная строка :", str)
 	//поворачиваем
 	str = reverseString(str)
 	//выводим результат
-	fmt.Println(str)
+	fmt.Println("Повернутая строка :", str)
+	fmt.Println("Так и должно быть)")
 }

@@ -25,12 +25,12 @@ func reverseWords(in string, sep string) string {
 }
 
 func (*Index) N20() {
-	//Отступ
-	fmt.Println()
+	fmt.Println("Разворачиваем слова")
 	//входные данные -строка
 	str := "snow dog sun"
+	fmt.Println("Исходная строка :", str)
 	//поворачиваем
 	str = reverseWords(str, " ")
 	//выводим результат
-	fmt.Println(str)
+	fmt.Println("Слова в обратном порядке :", str)
 }

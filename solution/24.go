@@ -41,11 +41,10 @@ func (p *Point) Distance(point Point) float64 {
 }
 
 func (*Index) N24() {
-	//Отступ
-	fmt.Println()
+	fmt.Println("входные данные - координаты точек 1 и 2")
 	//входные данные - координаты x1, y1, x2, y2
 	x1, y1, x2, y2 := 1, 2, 4, 6
-	fmt.Println(x1, y1, x2, y2)
+	fmt.Printf("x1 = %d, y1 = %d, x2 = %d, y2 = %d\n", x1, y1, x2, y2)
 	//создаем точки конструктором
 	//X1, X2 имеют тип Point
 	X1 := NewPoint(x1, y1)
@@ -53,5 +52,5 @@ func (*Index) N24() {
 	//считаем расстояние, вызывая метод
 	//и выводим результат
 	D := X1.Distance(X2)
-	fmt.Println(D)
+	fmt.Println("Расстояние от 1 точки до 2 равно :", D)
 }

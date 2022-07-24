@@ -60,12 +60,13 @@ func AtomicCount() {
 	}
 	wg.Wait()
 	//ShowCounter возвращает занчение атомарно
-	fmt.Println("counter is = ", atomicVal.ShowCounter())
+	fmt.Println("итоговое значение счетчика = ", atomicVal.ShowCounter())
 }
 
 func (*Index) N18() {
-	//Отступ
-	fmt.Println()
+	fmt.Println("Атомарный счетчик")
+	fmt.Println("Запущено 120 горутин")
+	fmt.Println("каждая инкрементирует счетчик 10 раз")
 	//запускаем нашу функцию
 	AtomicCount()
 }

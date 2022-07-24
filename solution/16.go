@@ -58,12 +58,11 @@ func quickSort(arr []int, l, r int) {
 }
 
 func (*Index) N16() {
-	//Отступ
-	fmt.Println()
 	//входные данные
 	arr := []int{7, 1, 9, -1, 20, 2}
+	fmt.Println("Исходный слайс чисел", arr)
 	//сортируем
 	quickSort(arr, 0, len(arr)-1)
 	//выводим результат
-	fmt.Println(arr)
+	fmt.Println("Отсортированный слайс чисел", arr)
 }

@@ -33,13 +33,19 @@ func CheckUnique(input string) bool {
 
 func (*Index) N26() {
 	//Отступ
-	fmt.Println()
+	fmt.Println("Проверяем уникальность вхождения символов в строку")
+	fmt.Println("Исходные строки")
 	//входные данные - строки
 	s1 := "abcd"
 	s2 := "abCdefAaf"
 	s3 := "aabcd"
 	s4 := "aBcdb"
+	fmt.Println(s1)
+	fmt.Println(s2)
+	fmt.Println(s3)
+	fmt.Println(s4)
 	//проверяем и выводим результат
+	fmt.Println("проверяем и выводим результат по порядку")
 	fmt.Println(CheckUnique(s1))
 	fmt.Println(CheckUnique(s2))
 	fmt.Println(CheckUnique(s3))

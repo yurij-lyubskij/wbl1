@@ -51,10 +51,12 @@ func (*Index) N21() {
 	smartPhone := &Smartphone{}
 	//клиент может заряжать смартфон без адаптера
 	client.insertTypeC(smartPhone)
+	fmt.Println("клиент может заряжать смартфон без адаптера")
 	appleConnector := &apple{}
 	usbAdapter := &androidAdapter{
 		connector: appleConnector,
 	}
 	//клиент может заряжать айфон, если есть адаптер
 	client.insertTypeC(usbAdapter)
+	fmt.Println("клиент может заряжать айфон, если есть адаптер")
 }

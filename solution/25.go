@@ -15,12 +15,10 @@ func sleep(seconds int) {
 }
 
 func (*Index) N25() {
-	//Отступ
-	fmt.Println()
 	//выводим что-то
-	fmt.Println("Hello, ")
+	fmt.Println("выводим что-то")
 	//спим 5 с
-	sleep(5)
+	sleep(3)
 	//выводим еще что-то
-	fmt.Println("World")
+	fmt.Println("выводим еще что-то после того, как поспали")
 }

@@ -41,20 +41,19 @@ func BinarySearch(arr []int, key int) int {
 }
 
 func (*Index) N17() {
-	//Отступ
-	fmt.Println()
 	//входные данные -отсортированный массив
 	arr := []int{-1, 1, 2, 3, 10, 15, 100, 500, 1000}
 	//ищем
+	fmt.Println("Исходный отсортированный слайс чисел", arr)
 	a := BinarySearch(arr, -1)
 	//выводим результат
-	fmt.Println(a)
+	fmt.Println("позиция -1: ", a)
 	//ищем
 	a = BinarySearch(arr, 15)
 	//выводим результат
-	fmt.Println(a)
+	fmt.Println("позиция 15: ", a)
 	//ищем
 	a = BinarySearch(arr, 100)
 	//выводим результат
-	fmt.Println(a)
+	fmt.Println("позиция 100: ", a)
 }
