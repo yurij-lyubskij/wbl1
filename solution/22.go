@@ -30,8 +30,10 @@ func Subtract(a *big.Float, b *big.Float) *big.Float {
 }
 
 func N22() {
+	//задаем большие числа строкой
 	aString := "123456789101112131415161700000000.0003"
 	bString := "567891011121314151617000000000000.0007"
+	//создаем переменные, используя фабричные функции
 	a, ok := new(big.Float).SetString(aString)
 	if ok != true {
 		fmt.Println("Not a number")
@@ -40,10 +42,10 @@ func N22() {
 	if ok != true {
 		fmt.Println("Not a number")
 	}
+	//Выводим значения и результат арифметических операций
 	fmt.Printf("a = %v, b = %v\n", a, b)
 	fmt.Printf("a * b = %v\n", Multiply(a, b))
 	fmt.Printf("a / b = %v\n", Divide(a, b))
 	fmt.Printf("a + b = %v\n", Add(a, b))
 	fmt.Printf("a - b = %v\n", Subtract(a, b))
-
 }
