@@ -2,6 +2,7 @@ package solution
 
 import (
 	"fmt"
+	"runtime"
 	"sync"
 )
 
@@ -50,13 +51,18 @@ func StoreLoad(myMap *ConcurMap, ch1 <-chan int, wg *sync.WaitGroup) {
 			if ok != true {
 				fmt.Println("no such key found")
 			}
-			fmt.Printf("key = %d, val = %d\n", i/2, val)
+			if (ok == true) {
+				fmt.Printf("key = %d, val = %d\n", i/2, val)
+			}
 		}
 	}
 }
 
 //проверка - чтение и запись в горутинах
 func MapCheck() {
+	//для того, чтобы была параллельность
+	//запустим на всех ядрах
+	runtime.GOMAXPROCS(0)
 	myMap := NewMap()
 	//используем WaitGroup, чтобы ждать завершения горутин
 	wg := &sync.WaitGroup{}
